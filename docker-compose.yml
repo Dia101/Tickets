@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+   mysql:
+      image: mysql:latest
+      environment:
+         MYSQL_ROOT_PASSWORD: password
+         MYSQL_DATABASE: ticket_db
+      volumes:
+         - mysql-data:/var/lib/mysql
+      networks:
+         - ticket-network
+
+   server:
+      build: .
+      restart: always
+      ports:
+         - '9090:9090'
+      environment:
+         SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/ticket_db
+         SPRING_DATASOURCE_USERNAME: root
+         SPRING_DATASOURCE_PASSWORD: password
+         SERVER_PORT: 9090
+      depends_on:
+         - mysql
+      networks:
+         - ticket-network
+
+networks:
+   ticket-network:
+
+volumes:
+   mysql-data:
