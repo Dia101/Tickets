@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import ru.dia101.ticket.files.ControllerFunctions;
 import ru.dia101.ticket.files.ResponseWithStatus;
 import ru.dia101.ticket.files.StatusCode;
-import ru.dia101.ticket.tables.place.Place;
-import ru.dia101.ticket.tables.place.PlaceService;
+import ru.dia101.ticket.tables.plane.Plane;
+import ru.dia101.ticket.tables.plane.PlaneService;
 
 import java.util.List;
 
@@ -16,32 +16,32 @@ import java.util.List;
 @RequestMapping("/planes")
 @RequiredArgsConstructor
 public class PlaneController {
-    private final PlaceService placeService;
+    private final PlaneService planeService;
     private final ControllerFunctions controllerFunctions;
 
     @GetMapping
-    public ResponseEntity<ResponseWithStatus<List<Place>>> findAll(){
-        return ResponseEntity.ok(placeService.findAll());
+    public ResponseEntity<ResponseWithStatus<List<Plane>>> findAll(){
+        return ResponseEntity.ok(planeService.findAll());
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<ResponseWithStatus<Place>> findById(@PathVariable Long id, HttpServletRequest request){
-        return controllerFunctions.responseWithStatus(id, placeService::findById, request);
+    public ResponseEntity<ResponseWithStatus<Plane>> findById(@PathVariable Long id, HttpServletRequest request){
+        return controllerFunctions.responseWithStatus(id, planeService::findById, request);
     }
 
     @GetMapping(params = "serialNumber")
-    public ResponseEntity<ResponseWithStatus<Place>> findByPlaceNumber(@RequestParam String serialNumber, HttpServletRequest request){
-        return controllerFunctions.responseWithStatus(serialNumber, placeService::findByPlaceNumber, request);
+    public ResponseEntity<ResponseWithStatus<Plane>> findBySerialNumber(@RequestParam String serialNumber, HttpServletRequest request){
+        return controllerFunctions.responseWithStatus(serialNumber, planeService::findBySerialNumber, request);
     }
 
     @PostMapping
-    public ResponseEntity<StatusCode> save(@RequestBody Place place, HttpServletRequest request){
-        return controllerFunctions.statusCode(place, placeService::save, request);
+    public ResponseEntity<StatusCode> save(@RequestBody Plane plane, HttpServletRequest request){
+        return controllerFunctions.statusCode(plane, planeService::save, request);
     }
 
     @DeleteMapping("{id}")
     public ResponseEntity<StatusCode> deleteById(@PathVariable Long id, HttpServletRequest request){
-        return controllerFunctions.statusCode(id, placeService::deleteById, request);
+        return controllerFunctions.statusCode(id, planeService::deleteById, request);
     }
 
 }

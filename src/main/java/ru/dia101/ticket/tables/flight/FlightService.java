@@ -48,18 +48,23 @@ public class FlightService {
     }
     public boolean notFull(Flight flight) {
        if(!userRepo.existsById(flight.getUserId())){
+           System.out.println("!UserId");
            return true;
        }
         if(!airlineRepo.existsById(flight.getAirlineId())){
+            System.out.println("!AirlineId");
             return true;
         }
         if(!cityRepo.existsById(flight.getDepartureCityId())){
+            System.out.println("!DepartureCityId");
             return true;
         }
         if(!cityRepo.existsById(flight.getArrivalCityId())){
+            System.out.println("!ArrivalCityId");
             return true;
         }
         if(!planeRepo.existsById(flight.getPlaneId())){
+            System.out.println("!PlaneId");
             return true;
         }
        return false;
@@ -114,6 +119,9 @@ public class FlightService {
                 flightRepo::save,
                 request
         );
+    }
+    public StatusCode deleteById(Long id, HttpServletRequest request){
+        return serviceFunctions.deleteByWithAuth(id, flightRepo::findById, flightRepo::deleteById, request);
     }
 
 }

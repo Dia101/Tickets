@@ -38,7 +38,7 @@ public class UserController {
         return controllerFunctions.statusCode(user, userService::save, request);
     }
 
-    @DeleteMapping
+    @DeleteMapping("{id}")
     public ResponseEntity<StatusCode> deleteById(HttpServletRequest request){
         return controllerFunctions.statusCode(userService::deleteById, request);
     }

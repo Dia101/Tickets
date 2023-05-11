@@ -1,0 +1,203 @@
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url(https://image.lexica.art/full_jpg/9eaa0984-4149-4e25-9429-fbabeaeed075) no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 210vh;
+}
+.sectionLogin{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 14vh 20vw;
+
+}
+
+.boxLogin{
+    position: relative;
+}
+.boxLogin .square{
+    border-radius: 1vh;
+    position: absolute;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5vh 9vh  rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-right: 1px solid;
+    border-radius: 40%;
+    rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+@keyframes animate{
+    0%,100%{
+        transform: translateY(-4vh);
+    }
+    50%{
+        transform: translateY(4vh);
+    }
+}
+
+
+.containerLogin{
+    background-color: rgba(5, 10, 139, 0.85);
+    border-radius: 50%;
+    width: 60vh;
+    height: 60vh;
+    padding: 10px;
+    display: flex;
+    box-shadow: 0 5vh 5vh  rgba(0,0,0,0.1);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.form{
+    position:relative;
+    width: 50vh;
+    height: 50vh;
+    padding: 2vw;
+    bottom: 10px;
+    text-align: center;
+}
+.form #h2Login{
+    position: relative;
+    text-align: center;
+    color: rgb(244, 231, 214);
+    font-size: 1.6em;
+    letter-spacing: 1.5px;
+    margin-bottom: 3vh;
+}
+.form #h2Login::before{
+    position:absolute;
+    content: '';
+    left: 40px;
+    bottom: -2vh;
+    width: 18vw;
+    height: .2vh;
+    background-color: #fff;
+}
+.form .inputBox{
+    width: 100%;
+    margin-top: 2vh;
+
+}
+.form .inputBox input{
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    width: 75%;
+    background: rgba(255, 255,255, 0.2);
+    border:none;
+    outline: none;
+    padding: 1vh 1vw;
+    border-radius: 4vh;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 1em;
+    letter-spacing: 1px;
+    color:#fff;
+    box-shadow: 0 1vh 3vh  rgba(0,0,0,0.05);
+}
+.form .inputBox input::placeholder{
+    color: rgb(203, 203, 203);
+}
+.form .inputBox input[type="submit"]{
+    background-color: rgba(255, 255, 255, 0.59);
+    color: #214093;
+    width: min-content;
+    cursor: pointer;
+    margin-bottom: 1vh;
+    font-weight: 600;
+}
+.form p{
+    margin-top: 1vh;
+    color:#ffffff;
+}
+
+.form p a{
+    text-decoration: none;
+    color:rgb(164, 164, 195);
+    font-weight: 500;
+}
+@media (orientation:landscape) {
+    .containerLogin{
+        min-height: 50vh;
+    }
+    .boxLogin .square:nth-child(1){
+        top:-10vh;
+        left: 40%;
+        width: 10vh;
+        height: 10vh;
+        z-index: -1;
+    }
+    .boxLogin .square:nth-child(2){
+        top:-5vh;
+        right: -5vh;
+        width: 15vh;
+        height: 15vh;
+        z-index: -1;
+    }
+    .boxLogin .square:nth-child(3){
+        bottom: 10vh;
+        right: -7vh;
+        width: 12vh;
+        height: 12vh;
+        z-index: 1;
+    }
+    .boxLogin .square:nth-child(4){
+        bottom:-5vh;
+        left: 30%;
+        width: 5vh;
+        height: 5vh;
+    }
+    .boxLogin .square:nth-child(5){
+        top:10vh;
+        right: 95%;
+        width: 18vh;
+        height: 18vh;
+        z-index: 1;
+    }
+}
+@media (orientation:portrait) {
+    .containerLogin{
+        min-width: 50vw;
+        max-width: 70vw;
+        min-height: 30vh;
+    }
+    .boxLogin .square:nth-child(1){
+        top:-10vh;
+        left: 40%;
+        width: 10vh;
+        height: 10vh;
+        z-index: -1;
+    }
+    .boxLogin .square:nth-child(2){
+        top:-5vh;
+        right: -5vh;
+        width: 15vh;
+        height: 15vh;
+        z-index: -1;
+    }
+    .boxLogin .square:nth-child(3){
+        bottom: 10vh;
+        right: -7vh;
+        width: 12vh;
+        height: 12vh;
+        z-index: 1;
+    }
+    .boxLogin .square:nth-child(4){
+        bottom:-5vh;
+        left: 10%;
+        width: 5vh;
+        height: 5vh;
+    }
+    .boxLogin .square:nth-child(5){
+        top:10vh;
+        right: 95%;
+        width: 13vh;
+        height: 13vh;
+        z-index: 1;
+    }
+}

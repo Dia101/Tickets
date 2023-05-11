@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Авиабилеты</title>
+    <link rel="icon" href="../../static/icon/airplane.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/98db032af2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../static/css/register.css">
+</head>
+<body>
+<section class="sectionLogin">
+
+    <div class="boxLogin">
+
+        <div class="square" style="--i:0"></div>
+        <div class="square" style="--i:1"></div>
+        <div class="square" style="--i:2"></div>
+        <div class="square" style="--i:3"></div>
+        <div class="square" style="--i:4"></div>
+
+
+        <div class="containerLogin">
+            <div class="form">
+                <h2 id="h2Login">Регистрация</h2>
+                <form th:action="@{/auth/register}" th:method="POST" th:object="${user}">
+
+                    <div class="inputBox">
+                        <input type="text" name="firstname" placeholder="Имя" th:field="*{firstname}">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="lastname" placeholder="Фамилия" th:field="*{lastname}">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="email" placeholder="Почта" th:field="*{email}">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="password" placeholder="Пароль" th:field="*{password}">
+                    </div>
+                    <<!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
+                    <div class="inputBox">
+                        <input type="submit" value="Зарегистрироваться">
+                        <p>Уже есть аккаунт? <a href="login.html">Войти</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

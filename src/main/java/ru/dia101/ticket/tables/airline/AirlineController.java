@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.dia101.ticket.files.ControllerFunctions;
 import ru.dia101.ticket.files.ResponseWithStatus;
 import ru.dia101.ticket.files.StatusCode;
+import ru.dia101.ticket.tables.city.City;
 
 import java.util.List;
 

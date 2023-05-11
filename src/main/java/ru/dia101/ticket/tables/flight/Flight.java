@@ -29,6 +29,6 @@ public class Flight {
     private Long arrivalCityId;
     @Column(name = "plane_id")
     private Long planeId;
-    private Date departureTime;
-    private Date arrivalTime;
+    private String departureTime;
+    private String arrivalTime;
 }

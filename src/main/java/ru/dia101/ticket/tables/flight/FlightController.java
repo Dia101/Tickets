@@ -63,5 +63,10 @@ public class FlightController {
         return controllerFunctions.statusCode(flight, flightService::save, request);
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<StatusCode> deleteById(@PathVariable Long id, HttpServletRequest request){
+        return controllerFunctions.statusCode(id, flightService::deleteById, request);
+    }
+
 
 }

@@ -24,6 +24,6 @@ public class FlightIsFull {
     private City departureCity;
     private City arrivalCity;
     private Plane plane;
-    private Date departureTime;
-    private Date arrivalTime;
+    private String departureTime;
+    private String arrivalTime;
 }
