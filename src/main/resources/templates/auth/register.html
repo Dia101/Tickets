@@ -26,10 +26,7 @@
                 <form th:action="@{/auth/register}" th:method="POST" th:object="${user}">
 
                     <div class="inputBox">
-                        <input type="text" name="firstname" placeholder="Имя" th:field="*{firstname}">
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" name="lastname" placeholder="Фамилия" th:field="*{lastname}">
+                        <input type="text" name="firstname" placeholder="Имя" th:field="*{fullName}">
                     </div>
                     <div class="inputBox">
                         <input type="text" name="email" placeholder="Почта" th:field="*{email}">
